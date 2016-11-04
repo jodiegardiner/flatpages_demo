@@ -16,10 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from hello import views
+from django.contrib.flatpages import urls as flatpages_urls
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.get_index),
-    url(r'^pages/', include('django.contrib.flatpages.urls')),
+    url(r'^pages/', include(flatpages_urls)),
 ]
